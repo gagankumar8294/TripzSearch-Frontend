@@ -140,6 +140,22 @@ export default function ProtectedPage() {
     <div style={{ maxWidth: "1200px", margin: "auto", padding: "20px" }}>
       <h1>Admin Panel – All Tours</h1>
 
+      <button
+  onClick={() => router.push("/admin/add-tour")}
+  style={{
+    padding: "10px 16px",
+    background: "#2563eb",
+    color: "white",
+    border: "none",
+    borderRadius: "6px",
+    cursor: "pointer",
+    marginTop: "10px"
+  }}
+>
+  ➕ Add New Tour
+</button>
+
+
       {/* -------------------------- */}
       {/* TOUR LIST */}
       {/* -------------------------- */}
