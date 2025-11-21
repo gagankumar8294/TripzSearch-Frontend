@@ -42,3 +42,12 @@
 .adminBtn:hover {
   background-color: #005ac1;
 }
+
+
+.loggedInBtn {
+  background: green;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 500;
+}

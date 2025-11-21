@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import styles from "./ToursList.module.css";
+import Link from "next/link";
 
 export default function ToursList() {
   const [tours, setTours] = useState([]);
@@ -42,6 +43,10 @@ export default function ToursList() {
               <p><strong>Start Date:</strong> {tour.startDate}</p>
               <p><strong>Duration:</strong> {tour.duration} days</p>
             </div>
+
+             <Link href={`/tours/${tour._id}`} className={styles.viewBtn}>
+              View
+            </Link>
           </div>
         ))}
       </div>
