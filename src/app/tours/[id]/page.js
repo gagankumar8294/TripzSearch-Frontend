@@ -1,4 +1,4 @@
-import styles from "./TourDetails.module.css";
+import styles from "./ToursDetails.module.css";
 
 async function fetchTour(id) {
   const res = await fetch(`https://tripzsearch-backend.onrender.com/api/tours/${id}`, {
