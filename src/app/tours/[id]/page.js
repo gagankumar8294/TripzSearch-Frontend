@@ -1,14 +1,26 @@
 import styles from "./ToursDetails.module.css";
 
+
 async function fetchTour(id) {
   const res = await fetch(`https://tripzsearch-backend.onrender.com/api/tours/${id}`, {
     cache: "no-store",
   });
+
+  if (!res.ok) {
+    return null;
+  }
+
   return res.json();
 }
 
 export default async function TourDetails({ params }) {
-  const tour = await fetchTour(params.id);
+  
+  const { id } = await params
+    const tour = await fetchTour(id);
+
+  if (!tour) {
+    return <h1>Tour Not Found</h1>;
+  }
 
   return (
     <div className={styles.container}>
@@ -29,9 +41,9 @@ export default async function TourDetails({ params }) {
           <p><strong>Start Date:</strong> {tour.startDate}</p>
           <p><strong>Duration:</strong> {tour.duration} days</p>
 
-          <button className={styles.backBtn} onClick={() => history.back()}>
+          {/* <button className={styles.backBtn} onClick={() => history.back()}>
             ← Back
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
