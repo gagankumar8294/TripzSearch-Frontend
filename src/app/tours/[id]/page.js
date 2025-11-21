@@ -1,5 +1,5 @@
 import styles from "./ToursDetails.module.css";
-
+import Link from "next/link";
 
 async function fetchTour(id) {
   const res = await fetch(`https://tripzsearch-backend.onrender.com/api/tours/${id}`, {
@@ -44,6 +44,10 @@ export default async function TourDetails({ params }) {
           {/* <button className={styles.backBtn} onClick={() => history.back()}>
             ← Back
           </button> */}
+          <Link href="/" className={styles.backBtn}>
+            ← Back
+          </Link>
+          
         </div>
       </div>
     </div>
